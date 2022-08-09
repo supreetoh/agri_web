@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+}
+
+#center{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    width: 100%;
+}
+
+.ring{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
+}
+
+@keyframes ring{
+    0%{
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #e65c00;
+    }
+    50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #18b201;
+    }
+    100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+    }
+}
+.ring::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+#span{
+    color: #737373;
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 200px;
+    animation: text 2s ease-in-out linear infinite;
+}
+@keyframes text{
+    50%{
+        color: black;
+    }
+}
+
+.main h1{
+    color: #000000;
+    font-size: 35px;
+    font-weight: 700;
+    /* margin-top: 10vh; */
+    text-align: center;
+    padding:5vmax 0 1vmax 0;
+}
+
+.main .des{
+    width: 8rem;
+    margin-left: 40%;
+    height: 0.25rem;
+    display: block;
+    background-color: #4763b7;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.item1, .item3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item1 .content,
+.item2 .content,
+.item3 .content{
+    padding:6vmax 12vmax;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.item1 .content h2,
+.item2 .content h2,
+.item3 .content h2{
+    display: block;
+    margin-bottom: 1vmax;
+}
+
+
+.item2{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.item1 img,
+.item2 img,
+.item3 img{
+    object-fit: contain;
+    height: 300px;
+    width: 375px;
+}
+
+@media (max-width:750px) {
+    .item1, .item2, .item3{
+        display: flex;
+        flex-direction: column;
+    }
+    .item1 .content,
+    .item2 .content,
+    .item3 .content{
+        padding:2vmax 4vmax;
+        font-size: 15px;
+}
+}
